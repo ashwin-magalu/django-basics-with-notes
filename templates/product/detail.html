@@ -1,0 +1,20 @@
+<!-- Usually, keep this file in templates folder of app itself instead of general templates folder. So, we can avoid the problem of overriding, as, general template overrides templates in app folder, if the names are same -->
+
+{% extends 'base.html' %} {% block content %}
+<!-- <h1>Item: {{title}}</h1>
+<p>
+  {% if description != None and description != "" %} {{description}} {% else %}
+  Description coming soon {% endif %}
+</p>
+<p>{{price}}</p>
+<p>{{summary}}</p>
+<p>{{featured}}</p> -->
+<h1>Item: {{object.title}}</h1>
+<p>
+  {% if object.description != None and object.description != "" %}
+  {{object.description}} {% else %} Description coming soon {% endif %}
+</p>
+<p>{{object.price}}</p>
+<p>{{object.summary}}</p>
+<p>{{object.featured}}</p>
+{% endblock content %}

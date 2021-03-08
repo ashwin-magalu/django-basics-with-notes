@@ -1,0 +1,22 @@
+<!-- Used in views.py of pages -->
+<!-- https://docs.djangoproject.com/en/2.0/ref/templates/builtins/#built-in-filter-reference -->
+{% extends 'base.html' %} {% block content %}
+<h1>About page</h1>
+<h3>{{my_text|capfirst|upper}}</h3>
+{{my_html|safe}} {{my_html|striptags}}
+<p>This is a template</p>
+
+<p>{{my_number}}</p>
+<p>{{my_list}}</p>
+
+<ul>
+  {% for my_sub_item in my_list %} {% if my_sub_item == 123 %}
+  <li>{{forloop.counter}} - {{my_sub_item|add:22}}</li>
+  <!-- adds 22 to 123. Here add is a filter, filters are added with | as a prefix -->
+  {% elif my_sub_item == "abc" %}
+  <li>This is not a number</li>
+  {% else %}
+  <li>{{forloop.counter}} - {{my_sub_item}}</li>
+  {% endif %} {% endfor %}
+</ul>
+{% endblock %}
