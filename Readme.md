@@ -186,7 +186,7 @@
 
 1. Changes are made in urls.py and also urls.py file is created in products folder
 
-## Class based views - List view
 
-1. Create a new app with name blog
-2. Check the code there
+
+
+
